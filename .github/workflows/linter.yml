@@ -6,7 +6,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      
+      - name: Comprobar codigo
+        uses: actions/checkout@v4
 
+      - name: Instalar dependencias
+        run: npm install
 
       - name: linter
         run: npx next lint
