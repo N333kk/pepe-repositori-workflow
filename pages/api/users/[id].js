@@ -15,7 +15,7 @@ function handler(req, res) {
   }
 
   function getUserById() {
-    let user = usersRepo.getById(req.query.id);
+    const user = usersRepo.getById(req.query.id);
     return res.status(200).json(user);
   }
 
