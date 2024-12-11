@@ -1,0 +1,12 @@
+name: linter-job
+on: [push]
+jobs: 
+  linter-job: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checking out our code 
+        uses: actions/checkout@master 
+      - name: Say something 
+        run: | 
+          echo "A little less ${message}" 
+          echo "A little more action" 
