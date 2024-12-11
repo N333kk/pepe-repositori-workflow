@@ -1,0 +1,21 @@
+name: Update README with badge
+description: 'Modify the README to add a badge for Cypress test results'
+
+inputs:
+  result:
+    description: 'Result of the Cypress tests (success or failure)'
+    required: true
+
+runs:
+  using: "node12"
+  steps:
+    - name: Modify README.md
+      run: |
+        if [ "${{ inputs.result }}" == "success" ]; then
+          badge="![Cypress Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)"
+        else
+          badge="![Cypress Failure](https://img.shields.io/badge/test-failure-red)"
+        fi
+        
+        sed -i "/RESULTAT DELS ÚLTIMS TESTS/a\\
+        $badge" README.md
