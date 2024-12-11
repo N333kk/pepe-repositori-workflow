@@ -37,7 +37,7 @@ jobs:
         continue-on-error: true
 
       - name: Guardar Resultado
-        run: echo "$[{ steps.cypress.outcome }]" > result.txt
+        run: echo "${{ steps.cypress.outcome }}" > result.txt
 
       - name: Guardar Artefacto
         uses: actions/upload-artifact@v4
