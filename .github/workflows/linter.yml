@@ -66,17 +66,15 @@ jobs:
         with:
           name: resultado
 
-      - name: Usar artefacto
-        id: outcome
-        run: |
-          result=$(cat ./resultado.txt)
-          echo "::set-output name=cypress_outcome::${result}"
-
       - name: Update README with badge
-        uses: .github/workflows/action-custom/update-readme-action.yml
-        with:
-          result: ${{ steps.outcome.outputs.cypress_outcome }}
-
+        run: |
+          OUTCOME=$(cat ./resultado.txt)
+          if [ "$OUTCOME" == "success" ]; then
+          BADGE="![Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)"
+          else
+          BADGE="![Failure](https://img.shields.io/badge/test-failure-red)"
+          fi
+          echo "\nRESULTAT DELS ÚLTIMS TESTS\n$BADGE" >> README.md
       - name: Commit and push changes to README
         run: |
           git config --global user.name "github-actions"
