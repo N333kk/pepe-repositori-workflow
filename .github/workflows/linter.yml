@@ -7,8 +7,6 @@ jobs:
 
     steps:
 
-      - name: Instalar dependencias
-        run: npm install
 
       - name: linter
         run: npx next lint
