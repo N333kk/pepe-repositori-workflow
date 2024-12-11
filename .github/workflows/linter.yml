@@ -73,7 +73,7 @@ jobs:
           echo "::set-output name=cypress_outcome::${result}"
 
       - name: Update README with badge
-        uses: ./update-readme-action
+        uses: ./action-custom/update-readme-action
         with:
           result: ${{ steps.outcome.outputs.cypress_outcome }}
 
