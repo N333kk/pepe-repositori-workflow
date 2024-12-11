@@ -42,7 +42,7 @@ jobs:
       - name: Guardar Artefacto
         uses: actions/upload-artifact@v4
         with:
-          path: ./resultados_tests/resultado.txt
+          path: .
           name: resultado.txt
         continue-on-error: true
   
@@ -64,12 +64,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: resultado.txt
-          path: ./resultados_tests
 
       - name: Usar artefacto
         id: outcome
         run: |
-          result=$(cat ./resultados_tests/resultado.txt)
+          result=$(cat resultado.txt)
           echo "::set-output name=cypress_outcome::${result}"
 
       - name: Update README with badge
