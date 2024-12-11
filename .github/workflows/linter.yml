@@ -4,13 +4,15 @@ permissions: write-all
 jobs:
   linter-job:
     runs-on: ubuntu-20.04
+
     steps:
+
       - name: Comprobar codigo
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Instalar dependencias
-      - run: npm install
+        run: npm install
 
       - name: linter
-      - run: npx next lint
+        run: npx next lint
 
