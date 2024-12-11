@@ -32,6 +32,7 @@ jobs:
       - name: Tests Cypress
         uses: cypress-io/github-action@v6
         with:
+          build: next build
           start: npm start
         id: cypress
         continue-on-error: true
