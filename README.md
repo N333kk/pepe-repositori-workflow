@@ -96,4 +96,4 @@ Como podemos ver, tenemos instrucciones como schedule, que nos permite ejecutar 
 
 En mi caso, solo he incorporado un plugin de introduccion basico y uno de los lenguajes mas usados, una vez ejecutado el workflow, solamente he usado el segundo ya que los dos aportaban datos muy similares
 
-![Workflow Metricas](public/9.png)
+![Workflow Metricas](public/9.png)\nRESULTAT DELS ÚLTIMS TESTS\n![Success](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)
